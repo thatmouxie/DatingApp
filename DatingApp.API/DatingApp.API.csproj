@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>f879a1dc-e596-4552-bf6b-1edf2c6afeed</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.1"/>
+  </ItemGroup>
+</Project>

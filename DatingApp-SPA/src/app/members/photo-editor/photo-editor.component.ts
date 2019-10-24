@@ -14,6 +14,8 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 
 export class PhotoEditorComponent implements OnInit {
   @Input() photos: Photo[];
+
+  // Any to Any component communication
   @Output() getMemberPhotoChange = new EventEmitter<string>();
 
   uploader:FileUploader;
@@ -65,7 +67,7 @@ export class PhotoEditorComponent implements OnInit {
       this.currentMain = this.photos.filter(p => p.isMain === true)[0];
       this.currentMain.isMain = false;
       photo.isMain = true;
-      this.authService.changeMemeberPhoto(photo.url);
+      this.authService.changeMemberPhoto(photo.url);
       this.authService.currentUser.photoUrl = photo.url;
       localStorage.setItem('user', JSON.stringify(this.authService.currentUser));
     },

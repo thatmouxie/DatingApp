@@ -5,17 +5,17 @@ import * as alertify from 'alertifyjs';
   providedIn: 'root'
 })
 export class AlertifyService {
-
+  title: string = 'DatingApp';
 constructor() { }
 
   confirm(message: string, okCallback: () => any) {
-    alertify.confirm(message, (e: any) => { 
+    alertify.confirm(this.title, message, (e: any) => { 
       if (e) {
       okCallback();
       }
-      else {
-
-      }
+    },
+    error => {
+      this.error(error);
     });
   }
 
@@ -34,5 +34,4 @@ constructor() { }
   message(message: string) {
     alertify.message(message);
   }
-  
 }
